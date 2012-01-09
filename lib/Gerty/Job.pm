@@ -434,7 +434,7 @@ sub retrieve_devices
                 $self->{'devclasses'}{$dev->{'DEVCLASS'}} = $class;
             }
             
-            if( not defined($dev->{'ADDRESS'}) )
+            if( not defined($dev->{'ADDRESS'}) or ($dev->{'ADDRESS'} eq '') )
             {
                 # Sysname could actually be the IP address
                 if( $sysname =~ /^[0-9]+\./o or
